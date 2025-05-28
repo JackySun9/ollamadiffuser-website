@@ -1,0 +1,20 @@
+{
+  "name": "OllamaDiffuser - Local AI Image Generation",
+  "short_name": "OllamaDiffuser",
+  "description": "Local Stable Diffusion and FLUX.1 deployment tool with Ollama-style CLI interface",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "developer", "ai"],
+  "keywords": ["ollamadiffuser", "stable diffusion", "local ai", "image generation", "diffuser"]
+} 
