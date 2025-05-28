@@ -1,0 +1,112 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="512" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#1e293b">Ollama Diffuser</text>
+  
+  <!-- Flower Logo -->
+  <g transform="translate(512, 550)">
+    <!-- Stem -->
+    <rect x="-8" y="100" width="16" height="200" fill="#166534" rx="8"/>
+    
+    <!-- Leaves -->
+    <ellipse cx="-40" cy="180" rx="25" ry="15" fill="#22c55e" transform="rotate(-30)"/>
+    <ellipse cx="40" cy="180" rx="25" ry="15" fill="#22c55e" transform="rotate(30)"/>
+    
+    <!-- Leaf details -->
+    <path d="M-40,180 Q-30,175 -20,180 Q-30,185 -40,180" fill="#16a34a"/>
+    <path d="M40,180 Q30,175 20,180 Q30,185 40,180" fill="#16a34a"/>
+    
+    <!-- Flower petals (from bottom to top) -->
+    <!-- Purple petals (bottom layer) -->
+    <ellipse cx="-60" cy="20" rx="35" ry="80" fill="#a855f7" transform="rotate(-45)"/>
+    <ellipse cx="60" cy="20" rx="35" ry="80" fill="#a855f7" transform="rotate(45)"/>
+    
+    <!-- Teal petals -->
+    <ellipse cx="-40" cy="-20" rx="35" ry="80" fill="#14b8a6" transform="rotate(-25)"/>
+    <ellipse cx="40" cy="-20" rx="35" ry="80" fill="#14b8a6" transform="rotate(25)"/>
+    
+    <!-- Blue petals -->
+    <ellipse cx="-80" cy="-10" rx="35" ry="80" fill="#3b82f6" transform="rotate(-65)"/>
+    <ellipse cx="80" cy="-10" rx="35" ry="80" fill="#3b82f6" transform="rotate(65)"/>
+    
+    <!-- Orange petals -->
+    <ellipse cx="-20" cy="-60" rx="35" ry="80" fill="#f97316" transform="rotate(-10)"/>
+    <ellipse cx="20" cy="-60" rx="35" ry="80" fill="#f97316" transform="rotate(10)"/>
+    
+    <!-- Red petal (center top) -->
+    <ellipse cx="0" cy="-80" rx="35" ry="80" fill="#ef4444"/>
+    
+    <!-- Petal details (dots pattern) -->
+    <g fill="white" opacity="0.6">
+      <!-- Purple petals dots -->
+      <circle cx="-45" cy="10" r="2"/>
+      <circle cx="-50" cy="25" r="1.5"/>
+      <circle cx="-40" cy="35" r="1"/>
+      <circle cx="45" cy="10" r="2"/>
+      <circle cx="50" cy="25" r="1.5"/>
+      <circle cx="40" cy="35" r="1"/>
+      
+      <!-- Teal petals dots -->
+      <circle cx="-30" cy="-10" r="2"/>
+      <circle cx="-35" cy="5" r="1.5"/>
+      <circle cx="-25" cy="15" r="1"/>
+      <circle cx="30" cy="-10" r="2"/>
+      <circle cx="35" cy="5" r="1.5"/>
+      <circle cx="25" cy="15" r="1"/>
+      
+      <!-- Blue petals dots -->
+      <circle cx="-60" cy="-5" r="2"/>
+      <circle cx="-65" cy="10" r="1.5"/>
+      <circle cx="-55" cy="20" r="1"/>
+      <circle cx="60" cy="-5" r="2"/>
+      <circle cx="65" cy="10" r="1.5"/>
+      <circle cx="55" cy="20" r="1"/>
+      
+      <!-- Orange petals dots -->
+      <circle cx="-15" cy="-50" r="2"/>
+      <circle cx="-20" cy="-35" r="1.5"/>
+      <circle cx="-10" cy="-25" r="1"/>
+      <circle cx="15" cy="-50" r="2"/>
+      <circle cx="20" cy="-35" r="1.5"/>
+      <circle cx="10" cy="-25" r="1"/>
+      
+      <!-- Red petal dots -->
+      <circle cx="0" cy="-70" r="2"/>
+      <circle cx="-5" cy="-55" r="1.5"/>
+      <circle cx="5" cy="-55" r="1.5"/>
+      <circle cx="0" cy="-40" r="1"/>
+    </g>
+    
+    <!-- Flower center -->
+    <circle cx="0" cy="0" r="15" fill="#166534"/>
+    
+    <!-- Stamens -->
+    <g stroke="#ef4444" stroke-width="2" fill="#ef4444">
+      <line x1="0" y1="-15" x2="0" y2="-35"/>
+      <circle cx="0" cy="-35" r="3"/>
+      
+      <line x1="-8" y1="-12" x2="-15" y2="-28"/>
+      <circle cx="-15" cy="-28" r="2.5"/>
+      
+      <line x1="8" y1="-12" x2="15" y2="-28"/>
+      <circle cx="15" cy="-28" r="2.5"/>
+      
+      <line x1="-12" y1="-8" x2="-25" y2="-20"/>
+      <circle cx="-25" cy="-20" r="2"/>
+      
+      <line x1="12" y1="-8" x2="25" y2="-20"/>
+      <circle cx="25" cy="-20" r="2"/>
+    </g>
+    
+    <!-- Additional stamens -->
+    <g stroke="#f97316" stroke-width="1.5" fill="#f97316">
+      <line x1="-6" y1="-10" x2="-12" y2="-22"/>
+      <circle cx="-12" cy="-22" r="2"/>
+      
+      <line x1="6" y1="-10" x2="12" y2="-22"/>
+      <circle cx="12" cy="-22" r="2"/>
+    </g>
+  </g>
+</svg> 

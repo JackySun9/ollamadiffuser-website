@@ -1,0 +1,30 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flower Logo for Favicon -->
+  <g transform="translate(16, 16)">
+    <!-- Flower petals (simplified for small size) -->
+    <!-- Purple petals (bottom layer) -->
+    <ellipse cx="-4" cy="1" rx="2.5" ry="6" fill="#a855f7" transform="rotate(-45)"/>
+    <ellipse cx="4" cy="1" rx="2.5" ry="6" fill="#a855f7" transform="rotate(45)"/>
+    
+    <!-- Teal petals -->
+    <ellipse cx="-2.5" cy="-1.5" rx="2.5" ry="6" fill="#14b8a6" transform="rotate(-25)"/>
+    <ellipse cx="2.5" cy="-1.5" rx="2.5" ry="6" fill="#14b8a6" transform="rotate(25)"/>
+    
+    <!-- Blue petals -->
+    <ellipse cx="-5" cy="-0.5" rx="2.5" ry="6" fill="#3b82f6" transform="rotate(-65)"/>
+    <ellipse cx="5" cy="-0.5" rx="2.5" ry="6" fill="#3b82f6" transform="rotate(65)"/>
+    
+    <!-- Orange petals -->
+    <ellipse cx="-1.5" cy="-4" rx="2.5" ry="6" fill="#f97316" transform="rotate(-10)"/>
+    <ellipse cx="1.5" cy="-4" rx="2.5" ry="6" fill="#f97316" transform="rotate(10)"/>
+    
+    <!-- Red petal (center top) -->
+    <ellipse cx="0" cy="-5" rx="2.5" ry="6" fill="#ef4444"/>
+    
+    <!-- Flower center -->
+    <circle cx="0" cy="0" r="2" fill="#166534"/>
+    
+    <!-- Simple stamen -->
+    <circle cx="0" cy="-2.5" r="0.5" fill="#ef4444"/>
+  </g>
+</svg> 

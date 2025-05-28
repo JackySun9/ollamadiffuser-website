@@ -1,0 +1,106 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flower Logo -->
+  <g transform="translate(100, 100)">
+    <!-- Stem -->
+    <rect x="-3" y="40" width="6" height="60" fill="#166534" rx="3"/>
+    
+    <!-- Leaves -->
+    <ellipse cx="-15" cy="70" rx="10" ry="6" fill="#22c55e" transform="rotate(-30)"/>
+    <ellipse cx="15" cy="70" rx="10" ry="6" fill="#22c55e" transform="rotate(30)"/>
+    
+    <!-- Leaf details -->
+    <path d="M-15,70 Q-10,67 -5,70 Q-10,73 -15,70" fill="#16a34a"/>
+    <path d="M15,70 Q10,67 5,70 Q10,73 15,70" fill="#16a34a"/>
+    
+    <!-- Flower petals (from bottom to top) -->
+    <!-- Purple petals (bottom layer) -->
+    <ellipse cx="-25" cy="8" rx="14" ry="32" fill="#a855f7" transform="rotate(-45)"/>
+    <ellipse cx="25" cy="8" rx="14" ry="32" fill="#a855f7" transform="rotate(45)"/>
+    
+    <!-- Teal petals -->
+    <ellipse cx="-16" cy="-8" rx="14" ry="32" fill="#14b8a6" transform="rotate(-25)"/>
+    <ellipse cx="16" cy="-8" rx="14" ry="32" fill="#14b8a6" transform="rotate(25)"/>
+    
+    <!-- Blue petals -->
+    <ellipse cx="-32" cy="-4" rx="14" ry="32" fill="#3b82f6" transform="rotate(-65)"/>
+    <ellipse cx="32" cy="-4" rx="14" ry="32" fill="#3b82f6" transform="rotate(65)"/>
+    
+    <!-- Orange petals -->
+    <ellipse cx="-8" cy="-24" rx="14" ry="32" fill="#f97316" transform="rotate(-10)"/>
+    <ellipse cx="8" cy="-24" rx="14" ry="32" fill="#f97316" transform="rotate(10)"/>
+    
+    <!-- Red petal (center top) -->
+    <ellipse cx="0" cy="-32" rx="14" ry="32" fill="#ef4444"/>
+    
+    <!-- Petal details (dots pattern) -->
+    <g fill="white" opacity="0.6">
+      <!-- Purple petals dots -->
+      <circle cx="-18" cy="4" r="1"/>
+      <circle cx="-20" cy="10" r="0.8"/>
+      <circle cx="-16" cy="14" r="0.5"/>
+      <circle cx="18" cy="4" r="1"/>
+      <circle cx="20" cy="10" r="0.8"/>
+      <circle cx="16" cy="14" r="0.5"/>
+      
+      <!-- Teal petals dots -->
+      <circle cx="-12" cy="-4" r="1"/>
+      <circle cx="-14" cy="2" r="0.8"/>
+      <circle cx="-10" cy="6" r="0.5"/>
+      <circle cx="12" cy="-4" r="1"/>
+      <circle cx="14" cy="2" r="0.8"/>
+      <circle cx="10" cy="6" r="0.5"/>
+      
+      <!-- Blue petals dots -->
+      <circle cx="-24" cy="-2" r="1"/>
+      <circle cx="-26" cy="4" r="0.8"/>
+      <circle cx="-22" cy="8" r="0.5"/>
+      <circle cx="24" cy="-2" r="1"/>
+      <circle cx="26" cy="4" r="0.8"/>
+      <circle cx="22" cy="8" r="0.5"/>
+      
+      <!-- Orange petals dots -->
+      <circle cx="-6" cy="-20" r="1"/>
+      <circle cx="-8" cy="-14" r="0.8"/>
+      <circle cx="-4" cy="-10" r="0.5"/>
+      <circle cx="6" cy="-20" r="1"/>
+      <circle cx="8" cy="-14" r="0.8"/>
+      <circle cx="4" cy="-10" r="0.5"/>
+      
+      <!-- Red petal dots -->
+      <circle cx="0" cy="-28" r="1"/>
+      <circle cx="-2" cy="-22" r="0.8"/>
+      <circle cx="2" cy="-22" r="0.8"/>
+      <circle cx="0" cy="-16" r="0.5"/>
+    </g>
+    
+    <!-- Flower center -->
+    <circle cx="0" cy="0" r="6" fill="#166534"/>
+    
+    <!-- Stamens -->
+    <g stroke="#ef4444" stroke-width="1" fill="#ef4444">
+      <line x1="0" y1="-6" x2="0" y2="-14"/>
+      <circle cx="0" cy="-14" r="1.2"/>
+      
+      <line x1="-3" y1="-5" x2="-6" y2="-11"/>
+      <circle cx="-6" cy="-11" r="1"/>
+      
+      <line x1="3" y1="-5" x2="6" y2="-11"/>
+      <circle cx="6" cy="-11" r="1"/>
+      
+      <line x1="-5" y1="-3" x2="-10" y2="-8"/>
+      <circle cx="-10" cy="-8" r="0.8"/>
+      
+      <line x1="5" y1="-3" x2="10" y2="-8"/>
+      <circle cx="10" cy="-8" r="0.8"/>
+    </g>
+    
+    <!-- Additional stamens -->
+    <g stroke="#f97316" stroke-width="0.8" fill="#f97316">
+      <line x1="-2" y1="-4" x2="-5" y2="-9"/>
+      <circle cx="-5" cy="-9" r="0.8"/>
+      
+      <line x1="2" y1="-4" x2="5" y2="-9"/>
+      <circle cx="5" cy="-9" r="0.8"/>
+    </g>
+  </g>
+</svg> 
