@@ -130,9 +130,9 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700" asChild>
-                <a href="https://github.com/ollamadiffuser/ollamadiffuser#-installation" target="_blank" rel="noopener noreferrer">
+                <a href="https://pypi.org/project/ollamadiffuser/" target="_blank" rel="noopener noreferrer">
                   <DownloadIcon className="h-4 w-4 mr-2" />
-                  Get Started
+                  Install from PyPI
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
@@ -222,9 +222,44 @@ export default function Home() {
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold mb-4">Quick Start</h3>
               <p className="text-slate-600 dark:text-slate-400">
-                Get up and running in minutes
+                Get up and running in minutes with pip install
               </p>
             </div>
+
+            {/* PyPI Installation Highlight */}
+            <Card className="mb-8 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/50 dark:to-blue-950/50 border-0">
+              <CardContent className="py-6">
+                <div className="text-center">
+                  <div className="flex items-center justify-center space-x-2 mb-4">
+                    <div className="h-8 w-8 rounded-lg bg-green-500 flex items-center justify-center">
+                      <DownloadIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <h4 className="text-xl font-semibold">Available on PyPI</h4>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4">
+                    Install OllamaDiffuser directly from the Python Package Index
+                  </p>
+                  <div className="bg-slate-900 dark:bg-slate-800 text-slate-100 p-4 rounded-lg font-mono text-lg">
+                    pip install ollamadiffuser
+                  </div>
+                  <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button variant="outline" asChild>
+                      <a href="https://pypi.org/project/ollamadiffuser/" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View on PyPI
+                      </a>
+                    </Button>
+                    <Button asChild>
+                      <a href="https://github.com/ollamadiffuser/ollamadiffuser#-installation" target="_blank" rel="noopener noreferrer">
+                        <GitHubLogoIcon className="h-4 w-4 mr-2" />
+                        Installation Guide
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card className="bg-slate-900 dark:bg-slate-800 text-slate-100">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
