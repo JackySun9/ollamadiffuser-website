@@ -37,6 +37,7 @@ export default function Home() {
     { label: "Quick Start", href: "#quickstart" },
     { label: "Models", href: "#models" },
     { label: "Compare", href: "#compare" },
+    { label: "Gallery", href: "#gallery" },
     { label: "Docs", href: "https://deepwiki.com/ollamadiffuser/ollamadiffuser", external: true },
     { label: "Feedback", href: "#feedback" }
   ]
@@ -661,6 +662,133 @@ export default function Home() {
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Section */}
+        <section id="gallery" className="py-16 bg-white/50 dark:bg-slate-900/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold mb-4">Gallery: Real Results</h3>
+                <p className="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+                  These images were generated using OllamaDiffuser with various models. 
+                  See the quality and diversity you can achieve with our platform.
+                </p>
+              </div>
+
+              <div className="text-center mb-12">
+                <p className="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+                  <strong>Prompts: </strong> A captivating portrait of two beautiful young women with diverse ethnicities, one with a charming smile and flowing, black hair, wearing a yellow sundress and the other with a playful grin and curly brown hair, wearing a bright, floral print dress. Their beauty is enhanced by the soft, natural light illuminating their faces and highlighting the delicate features of their faces, adding a touch of warmth and tenderness. This studio shot with a soft, blurred background creates a sense of intimacy and allows the viewers to connect with their expressions. Their energy radiates with natural charm and confidence, making the viewer feel a sense of happiness and joy.
+                </p>
+              </div>
+
+              {/* Image Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {[
+                  {
+                    src: "/gallery/flux.1-schnell.png",
+                    alt: "Women in yellow and floral dresses",
+                    model: "FLUX.1-dev",
+                    steps: "50 steps"
+                  },
+                  {
+                    src: "/gallery/flux.1-schnell.png",
+                    alt: "Two women in yellow dresses",
+                    model: "FLUX.1-schnell",
+                    steps: "4 steps"
+                  },
+                  {
+                    src: "/gallery/sd3.5m.png", 
+                    alt: "Women in floral dresses outdoors",
+                    model: "Stable Diffusion 3.5",
+                    steps: "28 steps"
+                  },
+                  {
+                    src: "/gallery/sd3.5m-lora-8steps.png",
+                    alt: "Women in yellow dresses outdoor setting",
+                    model: "Stable Diffusion 3.5 + LoRA",
+                    steps: "8 steps"
+                  },
+                  {
+                    src: "/gallery/sdxl_01.png",
+                    alt: "Young women in colorful summer dresses",
+                    model: "Stable Diffusion XL", 
+                    steps: "50 steps"
+                  },
+                  {
+                    src: "/gallery/sd1.5_01.png",
+                    alt: "Women with beautiful curly hair",
+                    model: "Stable Diffusion 1.5",
+                    steps: "50 steps"
+                  }
+                ].map((image, index) => (
+                  <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow overflow-hidden group">
+                    <div className="relative overflow-hidden">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={400}
+                        height={400}
+                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-2 right-2">
+                        <Badge className="bg-blue-600/90 text-white backdrop-blur-sm">
+                          {image.model}
+                        </Badge>
+                      </div>
+                    </div>
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Generation Steps</span>
+                        <Badge variant="outline" className="text-xs">
+                          {image.steps}
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Gallery Stats */}
+              <div className="text-center">
+                <Card className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/50 dark:to-blue-950/50 border-0">
+                  <CardContent className="py-8">
+                    <h4 className="text-xl font-semibold mb-4">Professional Quality, Local Generation</h4>
+                    <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-2xl mx-auto">
+                      All these images were generated locally using OllamaDiffuser. 
+                      No cloud dependency, no usage limits, no privacy concerns.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Local Generation</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">4-50</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Steps Range</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">5+</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Model Types</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">∞</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">No Limits</div>
+                      </div>
+                    </div>
+                    <div className="mt-6">
+                      <Button asChild>
+                        <a href="#quickstart">
+                          <Palette className="h-4 w-4 mr-2" />
+                          Start Creating Your Own
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
