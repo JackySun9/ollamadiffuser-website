@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,11 +22,37 @@ import {
   MessageSquare,
   Bug,
   Lightbulb,
-  Heart
+  Heart,
+  Menu,
+  X
 } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const navigationItems = [
+    { label: "Features", href: "#features" },
+    { label: "Quick Start", href: "#quickstart" },
+    { label: "Models", href: "#models" },
+    { label: "Compare", href: "#compare" },
+    { label: "Docs", href: "https://deepwiki.com/ollamadiffuser/ollamadiffuser", external: true },
+    { label: "Feedback", href: "#feedback" }
+  ]
+
+  const scrollToSection = (href: string, external?: boolean) => {
+    if (external) {
+      window.open(href, '_blank', 'noopener noreferrer')
+    } else {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    setIsMenuOpen(false)
+  }
+
   const features = [
     {
       icon: <Terminal className="h-6 w-6" />,
@@ -112,7 +140,7 @@ export default function Home() {
       />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
         {/* Header */}
-        <header className="border-b bg-white/80 backdrop-blur-sm dark:bg-slate-950/80">
+        <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm dark:bg-slate-950/95 shadow-sm">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
@@ -129,24 +157,76 @@ export default function Home() {
                   OllamaDiffuser
                 </h1>
               </div>
+
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex items-center space-x-6">
+                {navigationItems.map((item) => (
+                  <button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href, item.external)}
+                    className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors text-sm font-medium"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </nav>
+
               <div className="flex items-center space-x-4">
-                <Badge variant="secondary" className="flex items-center space-x-1">
-                  <Star className="h-3 w-3" />
-                  <span>0</span>
-                </Badge>
-                <Badge variant="secondary" className="flex items-center space-x-1">
-                  <GitFork className="h-3 w-3" />
-                  <span>0</span>
-                </Badge>
-                <Button variant="outline" size="sm" asChild>
+                <div className="hidden sm:flex items-center space-x-4">
+                  <Badge variant="secondary" className="flex items-center space-x-1">
+                    <Star className="h-3 w-3" />
+                    <span>0</span>
+                  </Badge>
+                  <Badge variant="secondary" className="flex items-center space-x-1">
+                    <GitFork className="h-3 w-3" />
+                    <span>0</span>
+                  </Badge>
+                </div>
+                <Button variant="outline" size="sm" asChild className="hidden sm:flex">
                   <a href="https://github.com/ollamadiffuser/ollamadiffuser" target="_blank" rel="noopener noreferrer">
                     <GitHubLogoIcon className="h-4 w-4 mr-2" />
                     GitHub
                     <ExternalLink className="h-3 w-3 ml-1" />
                   </a>
                 </Button>
+
+                {/* Mobile Menu Button */}
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="md:hidden"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                  {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </Button>
               </div>
             </div>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+              <div className="md:hidden mt-4 py-4 border-t border-slate-200 dark:border-slate-800">
+                <nav className="flex flex-col space-y-3">
+                  {navigationItems.map((item) => (
+                    <button
+                      key={item.href}
+                      onClick={() => scrollToSection(item.href, item.external)}
+                      className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors text-sm font-medium text-left"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                  <div className="pt-2 border-t border-slate-200 dark:border-slate-800">
+                    <Button variant="outline" size="sm" asChild className="w-full">
+                      <a href="https://github.com/ollamadiffuser/ollamadiffuser" target="_blank" rel="noopener noreferrer">
+                        <GitHubLogoIcon className="h-4 w-4 mr-2" />
+                        GitHub
+                        <ExternalLink className="h-3 w-3 ml-1" />
+                      </a>
+                    </Button>
+                  </div>
+                </nav>
+              </div>
+            )}
           </div>
         </header>
 
@@ -223,7 +303,7 @@ export default function Home() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-16 bg-white/50 dark:bg-slate-900/50">
+        <section id="features" className="py-16 bg-white/50 dark:bg-slate-900/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold mb-4">Key Features</h3>
@@ -254,7 +334,7 @@ export default function Home() {
         </section>
 
         {/* Quick Start */}
-        <section className="py-16">
+        <section id="quickstart" className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
@@ -323,7 +403,7 @@ export default function Home() {
         </section>
 
         {/* Supported Models */}
-        <section className="py-16 bg-white/50 dark:bg-slate-900/50">
+        <section id="models" className="py-16 bg-white/50 dark:bg-slate-900/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold mb-4">Supported Models</h3>
@@ -351,6 +431,237 @@ export default function Home() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Table Section */}
+        <section id="compare" className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold mb-4">How OllamaDiffuser Compares</h3>
+                <p className="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+                  See how OllamaDiffuser stacks up against other popular AI image generation tools. 
+                  We focus on simplicity and integration while maintaining power and flexibility.
+                </p>
+              </div>
+
+              {/* Mobile-friendly comparison cards for smaller screens */}
+              <div className="lg:hidden space-y-6">
+                {[
+                  {
+                    name: "OllamaDiffuser",
+                    highlight: true,
+                    philosophy: "Ollama-like simplicity for diffusion models; unified & integrated local experience for broad audience",
+                    installation: "Very Easy",
+                    ui: "Unified System: CLI, Web UI, REST API, Python API",
+                    management: "Streamlined with direct HF integration",
+                    features: "Lazy Loading Architecture, Dynamic LoRA Management, Integrated Multi-Interface",
+                    performance: "High (lazy loading, memory optimization, auto device detection)",
+                    extensibility: "Medium (Python API for custom apps)",
+                    easeOfUse: "High (Ollama-like simplicity)",
+                    control: "High (CLI, Python API, ControlNet, dynamic LoRAs)",
+                    status: "New & actively developed (v1.1.0)"
+                  },
+                  {
+                    name: "Automatic1111",
+                    philosophy: "Comprehensive, highly customizable for power users & developers",
+                    installation: "Moderate",
+                    ui: "Browser-based Web UI (Gradio)",
+                    management: "Extensive: Supports Checkpoint, LoRA, ControlNet",
+                    features: "Broadest feature set & vast extension ecosystem",
+                    performance: "Medium (VRAM-intensive without optimization)",
+                    extensibility: "Very High (massive community extensions)",
+                    easeOfUse: "Medium (steep learning curve)",
+                    control: "Very High (unmatched granular control)",
+                    status: "Very popular & mature, extensive community"
+                  },
+                  {
+                    name: "reForge / Forge",
+                    philosophy: "Faster, more optimized fork of A1111; performance & efficiency focus",
+                    installation: "Easy",
+                    ui: "Similar browser-based Web UI, more streamlined",
+                    management: "Comprehensive, inherits A1111's model management",
+                    features: "Ultra-fast generation, enhanced VRAM efficiency, built-in AnimateDiff/SVD",
+                    performance: "Very High (primary focus on speed & VRAM improvements)",
+                    extensibility: "High (A1111 extension compatibility)",
+                    easeOfUse: "Medium (streamlined but still complex)",
+                    control: "High (advanced control while streamlining)",
+                    status: "Highly active, strong A1111 alternative"
+                  },
+                  {
+                    name: "SD.Next",
+                    philosophy: "All-in-one, multi-platform, highly optimized, bleeding-edge",
+                    installation: "Easy",
+                    ui: "Multiple Web UI options, fully localized",
+                    management: "Multi-model support, built-in ControlNet",
+                    features: "Multiplatform support, advanced optimization backends, 150+ OpenCLIP models",
+                    performance: "Very High (compile, quantize, compress)",
+                    extensibility: "High (supports extensions)",
+                    easeOfUse: "Medium (powerful but can be overwhelming)",
+                    control: "Very High (comprehensive options)",
+                    status: "Actively developed, bleeding-edge"
+                  }
+                ].map((tool, index) => (
+                  <Card key={index} className={`border-0 shadow-lg ${tool.highlight ? 'ring-2 ring-blue-500 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50' : 'hover:shadow-xl transition-shadow'}`}>
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className={`text-xl ${tool.highlight ? 'text-blue-600 dark:text-blue-400' : ''}`}>
+                          {tool.name}
+                        </CardTitle>
+                        {tool.highlight && (
+                          <Badge className="bg-blue-600 text-white">Recommended</Badge>
+                        )}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div>
+                        <h5 className="font-semibold text-sm text-slate-700 dark:text-slate-300 mb-1">Core Philosophy</h5>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">{tool.philosophy}</p>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <h6 className="font-medium text-slate-700 dark:text-slate-300">Installation</h6>
+                          <p className="text-slate-600 dark:text-slate-400">{tool.installation}</p>
+                        </div>
+                        <div>
+                          <h6 className="font-medium text-slate-700 dark:text-slate-300">Performance</h6>
+                          <p className="text-slate-600 dark:text-slate-400">{tool.performance}</p>
+                        </div>
+                        <div>
+                          <h6 className="font-medium text-slate-700 dark:text-slate-300">Ease of Use</h6>
+                          <p className="text-slate-600 dark:text-slate-400">{tool.easeOfUse}</p>
+                        </div>
+                        <div>
+                          <h6 className="font-medium text-slate-700 dark:text-slate-300">Control</h6>
+                          <p className="text-slate-600 dark:text-slate-400">{tool.control}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 className="font-medium text-slate-700 dark:text-slate-300 mb-1">Key Features</h6>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">{tool.features}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Desktop table for larger screens */}
+              <div className="hidden lg:block">
+                <Card className="border-0 shadow-lg overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead className="bg-slate-50 dark:bg-slate-800">
+                        <tr>
+                          <th className="px-6 py-4 text-left font-semibold text-slate-700 dark:text-slate-300">Feature</th>
+                          <th className="px-6 py-4 text-left font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50">
+                            <div className="flex items-center space-x-2">
+                              <span>OllamaDiffuser</span>
+                              <Badge variant="default" className="text-xs">Recommended</Badge>
+                            </div>
+                          </th>
+                          <th className="px-6 py-4 text-left font-semibold text-slate-700 dark:text-slate-300">Automatic1111</th>
+                          <th className="px-6 py-4 text-left font-semibold text-slate-700 dark:text-slate-300">reForge / Forge</th>
+                          <th className="px-6 py-4 text-left font-semibold text-slate-700 dark:text-slate-300">SD.Next</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
+                        {[
+                          {
+                            feature: "Core Philosophy",
+                            ollamadiffuser: "Ollama-like simplicity for diffusion models; unified & integrated local experience",
+                            automatic1111: "Comprehensive, highly customizable for power users & developers",
+                            reforge: "Faster, optimized fork of A1111; performance & efficiency focus",
+                            sdnext: "All-in-one, multi-platform, highly optimized, bleeding-edge"
+                          },
+                          {
+                            feature: "Installation Difficulty",
+                            ollamadiffuser: "Very Easy (pip install)",
+                            automatic1111: "Moderate (complex with extensions)",
+                            reforge: "Easy (streamlined setup)",
+                            sdnext: "Easy (built-in installer)"
+                          },
+                          {
+                            feature: "User Interface",
+                            ollamadiffuser: "Unified: CLI, Web UI, REST API, Python API",
+                            automatic1111: "Browser-based Web UI (Gradio)",
+                            reforge: "Streamlined browser-based Web UI",
+                            sdnext: "Multiple Web UI options, localized"
+                          },
+                          {
+                            feature: "Model Management",
+                            ollamadiffuser: "Streamlined with direct HF integration",
+                            automatic1111: "Extensive: Checkpoint, LoRA, ControlNet support",
+                            reforge: "Comprehensive, inherits A1111 management",
+                            sdnext: "Multi-model support, built-in ControlNet"
+                          },
+                          {
+                            feature: "Performance",
+                            ollamadiffuser: "High (lazy loading, memory optimization)",
+                            automatic1111: "Medium (VRAM-intensive without optimization)",
+                            reforge: "Very High (speed & VRAM improvements)",
+                            sdnext: "Very High (compile, quantize, compress)"
+                          },
+                          {
+                            feature: "Ease of Use",
+                            ollamadiffuser: "High (Ollama-like simplicity)",
+                            automatic1111: "Medium (steep learning curve)",
+                            reforge: "Medium (streamlined complexity)",
+                            sdnext: "Medium (powerful but overwhelming)"
+                          },
+                          {
+                            feature: "Extensibility",
+                            ollamadiffuser: "Medium (Python API for custom apps)",
+                            automatic1111: "Very High (massive extension ecosystem)",
+                            reforge: "High (A1111 extension compatibility)",
+                            sdnext: "High (supports extensions)"
+                          }
+                        ].map((row, index) => (
+                          <tr key={index} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                            <td className="px-6 py-4 font-medium text-slate-700 dark:text-slate-300">{row.feature}</td>
+                            <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 bg-blue-50/50 dark:bg-blue-950/20">
+                              <div className="flex items-start space-x-2">
+                                <Zap className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                                <span>{row.ollamadiffuser}</span>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">{row.automatic1111}</td>
+                            <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">{row.reforge}</td>
+                            <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">{row.sdnext}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </Card>
+
+                <div className="mt-8 text-center">
+                  <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/50 dark:to-blue-950/50 border-0">
+                    <CardContent className="py-6">
+                      <h4 className="text-lg font-semibold mb-2">Why OllamaDiffuser?</h4>
+                      <p className="text-slate-600 dark:text-slate-400 mb-4 max-w-3xl mx-auto">
+                        While other tools excel in specific areas, OllamaDiffuser uniquely combines <strong>Ollama&apos;s simplicity</strong> with 
+                        <strong> powerful diffusion capabilities</strong>. Perfect for users who want professional results without complexity.
+                      </p>
+                      <div className="flex flex-wrap justify-center gap-2">
+                        <Badge variant="outline" className="text-green-600 border-green-200">
+                          <Zap className="h-3 w-3 mr-1" />
+                          Easy Setup
+                        </Badge>
+                        <Badge variant="outline" className="text-blue-600 border-blue-200">
+                          <Settings className="h-3 w-3 mr-1" />
+                          Unified Interface
+                        </Badge>
+                        <Badge variant="outline" className="text-purple-600 border-purple-200">
+                          <Code className="h-3 w-3 mr-1" />
+                          Developer Friendly
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -467,7 +778,7 @@ export default function Home() {
         </section>
 
         {/* Feedback Section */}
-        <section className="py-16 bg-white/50 dark:bg-slate-900/50">
+        <section id="feedback" className="py-16 bg-white/50 dark:bg-slate-900/50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
