@@ -448,42 +448,41 @@ export default function ModelsPage() {
               <CardHeader>
                 <CardTitle>Quick Installation</CardTitle>
                 <CardDescription>
-                  Follow these steps to install any model with OllamaDiffuser
+                  Follow these steps to install and run any model with OllamaDiffuser
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold mb-2">1. Install OllamaDiffuser</h4>
+                    <h4 className="font-semibold mb-2"># Install from PyPI</h4>
                     <div className="bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm">
                       pip install ollamadiffuser
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2">2. Pull the Model</h4>
-                    <div className="bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm">
-                      ollamadiffuser pull [model-name]
+                    <h4 className="font-semibold mb-2"># Pull and run a model (4-command setup)</h4>
+                    <div className="bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm space-y-1">
+                      <div>ollamadiffuser pull flux.1-schnell</div>
+                      <div>ollamadiffuser run flux.1-schnell</div>
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
-                      Replace [model-name] with the specific model name from the list above
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2"># Generate via API</h4>
+                    <div className="bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm space-y-1">
+                      <div>curl -X POST http://localhost:8000/api/generate \</div>
+                      <div className="ml-4">-H &quot;Content-Type: application/json&quot; \</div>
+                      <div className="ml-4">-d &apos;{`{`}&quot;prompt&quot;: &quot;A beautiful sunset&quot;{`}`}&apos; \</div>
+                      <div className="ml-4">--output image.png</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950 rounded-lg">
+                    <p className="text-sm text-blue-800 dark:text-blue-200">
+                      <strong>Note:</strong> Replace <code className="bg-blue-100 dark:bg-blue-900 px-1 rounded">flux.1-schnell</code> with any model name from the list above. 
+                      The API will be available at <code className="bg-blue-100 dark:bg-blue-900 px-1 rounded">http://localhost:8000</code> after running the model.
                     </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold mb-2">3. Generate Images</h4>
-                    <div className="bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm">
-                      ollamadiffuser run [model-name] --prompt &quot;Your prompt here&quot;
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold mb-2">4. Python API Usage</h4>
-                    <div className="bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm">
-                      <div>from ollamadiffuser import OllamaDiffuser</div>
-                      <div className="mt-1">generator = OllamaDiffuser(&quot;[model-name]&quot;)</div>
-                      <div className="mt-1">image = generator.generate(&quot;Your prompt here&quot;)</div>
-                    </div>
                   </div>
                 </div>
               </CardContent>

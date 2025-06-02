@@ -168,28 +168,44 @@ export default function Home() {
             <Card className="bg-slate-900 dark:bg-slate-800 text-white">
               <CardContent className="p-8">
                 <div className="space-y-6 text-left">
-                  <div className="flex items-center space-x-4">
-                    <Badge variant="secondary" className="text-xs">1</Badge>
-                    <code className="text-green-400">pip install ollamadiffuser</code>
-              </div>
-                  <div className="flex items-center space-x-4">
-                    <Badge variant="secondary" className="text-xs">2</Badge>
-                    <code className="text-blue-400">ollamadiffuser pull flux.1-schnell</code>
-                      </div>
-                  <div className="flex items-center space-x-4">
-                    <Badge variant="secondary" className="text-xs">3</Badge>
-                    <code className="text-purple-400">ollamadiffuser run flux.1-schnell</code>
+                  <div>
+                    <div className="text-sm text-slate-400 mb-2"># Install from PyPI</div>
+                    <div className="flex items-center space-x-4">
+                      <Badge variant="secondary" className="text-xs">1</Badge>
+                      <code className="text-green-400">pip install ollamadiffuser</code>
                     </div>
-                  <div className="flex items-center space-x-4">
-                    <Badge variant="secondary" className="text-xs">4</Badge>
-                    <code className="text-orange-400">Generate your first image!</code>
                   </div>
+                  
+                  <div>
+                    <div className="text-sm text-slate-400 mb-2"># Pull and run a model (4-command setup)</div>
+                    <div className="flex items-center space-x-4 mb-2">
+                      <Badge variant="secondary" className="text-xs">2</Badge>
+                      <code className="text-blue-400">ollamadiffuser pull flux.1-schnell</code>
                     </div>
-                </CardContent>
-              </Card>
-            </div>
+                    <div className="flex items-center space-x-4">
+                      <Badge variant="secondary" className="text-xs">3</Badge>
+                      <code className="text-purple-400">ollamadiffuser run flux.1-schnell</code>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div className="text-sm text-slate-400 mb-2"># Generate via API</div>
+                    <div className="flex items-center space-x-4">
+                      <Badge variant="secondary" className="text-xs">4</Badge>
+                      <div className="text-orange-400 text-sm">
+                        <div className="font-mono">curl -X POST http://localhost:8000/api/generate \</div>
+                        <div className="font-mono ml-4">-H &quot;Content-Type: application/json&quot; \</div>
+                        <div className="font-mono ml-4">-d &apos;{`{`}&quot;prompt&quot;: &quot;A beautiful sunset&quot;{`}`}&apos; \</div>
+                        <div className="font-mono ml-4">--output image.png</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Footer */}
       <footer className="border-t py-12 bg-slate-50 dark:bg-slate-900">
