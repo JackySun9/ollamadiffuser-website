@@ -4,6 +4,7 @@
       "repo_id": "city96/FLUX.1-dev-gguf",
       "model_type": "flux",
       "variant": "gguf-q2k",
+      "pull_name": "flux.1-dev-gguf-q2k",
       "parameters": {
         "num_inference_steps": 16,
         "guidance_scale": 2.0,
@@ -28,6 +29,7 @@
       "repo_id": "city96/FLUX.1-dev-gguf",
       "model_type": "flux",
       "variant": "gguf-q3ks",
+      "pull_name": "flux.1-dev-gguf-q3ks",
       "parameters": {
         "num_inference_steps": 16,
         "guidance_scale": 2.0,
@@ -52,6 +54,7 @@
       "repo_id": "city96/FLUX.1-dev-gguf",
       "model_type": "flux",
       "variant": "gguf-q4ks",
+      "pull_name": "flux.1-dev-gguf-q4ks",
       "parameters": {
         "num_inference_steps": 16,
         "guidance_scale": 2.0,
@@ -552,6 +555,270 @@
         "commercial_use": true
       }
     },
+    "flux.1-schnell-gguf-q2k": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q2k",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 2,
+        "recommended_vram_gb": 4,
+        "min_ram_gb": 6,
+        "recommended_ram_gb": 8,
+        "disk_space_gb": 5,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q2_K (4.01GB). Smallest quantization, ultra-fast generation for low-end hardware."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q3ks": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q3ks",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 3,
+        "recommended_vram_gb": 6,
+        "min_ram_gb": 8,
+        "recommended_ram_gb": 12,
+        "disk_space_gb": 6,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q3_K_S (5.21GB). 3-bit quantization with good quality and ultra-fast generation."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q4-0": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q4-0",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 4,
+        "recommended_vram_gb": 8,
+        "min_ram_gb": 10,
+        "recommended_ram_gb": 16,
+        "disk_space_gb": 7,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q4_0 (6.77GB). 4-bit quantization with excellent quality and ultra-fast generation."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q4-1": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q4-1",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 4,
+        "recommended_vram_gb": 8,
+        "min_ram_gb": 12,
+        "recommended_ram_gb": 16,
+        "disk_space_gb": 8,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q4_1 (7.51GB). Higher precision 4-bit quantization with superior quality."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q4ks": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q4ks",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 4,
+        "recommended_vram_gb": 8,
+        "min_ram_gb": 10,
+        "recommended_ram_gb": 16,
+        "disk_space_gb": 7,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q4_K_S (6.78GB). K-quantization 4-bit variant with optimized quality."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q5-0": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q5-0",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 6,
+        "recommended_vram_gb": 10,
+        "min_ram_gb": 12,
+        "recommended_ram_gb": 18,
+        "disk_space_gb": 9,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q5_0 (8.25GB). 5-bit quantization with excellent quality preservation."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q5-1": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q5-1",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 6,
+        "recommended_vram_gb": 10,
+        "min_ram_gb": 14,
+        "recommended_ram_gb": 20,
+        "disk_space_gb": 9,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q5_1 (8.99GB). Higher precision 5-bit quantization with outstanding quality."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q5ks": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q5ks",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 6,
+        "recommended_vram_gb": 10,
+        "min_ram_gb": 12,
+        "recommended_ram_gb": 18,
+        "disk_space_gb": 9,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q5_K_S (8.26GB). K-quantization 5-bit variant with optimized quality and performance."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q6k": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q6k",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 8,
+        "recommended_vram_gb": 12,
+        "min_ram_gb": 16,
+        "recommended_ram_gb": 24,
+        "disk_space_gb": 10,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q6_K (9.83GB). 6-bit quantization with high quality and ultra-fast generation."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-q8": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-q8",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 10,
+        "recommended_vram_gb": 14,
+        "min_ram_gb": 18,
+        "recommended_ram_gb": 28,
+        "disk_space_gb": 13,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "FLUX.1-schnell Q8_0 (12.7GB). 8-bit quantization with near-original quality and ultra-fast generation."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
+    "flux.1-schnell-gguf-f16": {
+      "repo_id": "city96/FLUX.1-schnell-gguf",
+      "model_type": "flux",
+      "variant": "gguf-schnell-f16",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 512
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 16,
+        "recommended_vram_gb": 24,
+        "min_ram_gb": 32,
+        "recommended_ram_gb": 48,
+        "disk_space_gb": 24,
+        "supported_devices": ["CUDA", "MPS"],
+        "performance_notes": "FLUX.1-schnell F16 (23.8GB). Full precision with maximum quality and ultra-fast 4-step generation."
+      },
+      "license_info": {
+        "type": "Apache 2.0",
+        "requires_agreement": false,
+        "commercial_use": true
+      }
+    },
     "flux.1-lite-8b-alpha": {
       "repo_id": "city96/flux.1-lite-8B-alpha-gguf",
       "model_type": "flux",
@@ -648,6 +915,150 @@
         "commercial_use": false
       }
     },
+    "stable-diffusion-3.5-large-q4-0": {
+      "repo_id": "city96/stable-diffusion-3.5-large-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-q4-0",
+      "parameters": {
+        "num_inference_steps": 28,
+        "guidance_scale": 4.5,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 4,
+        "recommended_vram_gb": 6,
+        "min_ram_gb": 8,
+        "recommended_ram_gb": 12,
+        "disk_space_gb": 5,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Q4_0 (4.77GB). 4-bit quantization with excellent quality. Great for mid-range hardware."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-q4-1": {
+      "repo_id": "city96/stable-diffusion-3.5-large-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-q4-1",
+      "parameters": {
+        "num_inference_steps": 28,
+        "guidance_scale": 4.5,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 4,
+        "recommended_vram_gb": 6,
+        "min_ram_gb": 8,
+        "recommended_ram_gb": 14,
+        "disk_space_gb": 6,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Q4_1 (5.27GB). Higher precision 4-bit quantization with superior quality."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-q5-0": {
+      "repo_id": "city96/stable-diffusion-3.5-large-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-q5-0",
+      "parameters": {
+        "num_inference_steps": 28,
+        "guidance_scale": 4.5,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 5,
+        "recommended_vram_gb": 8,
+        "min_ram_gb": 10,
+        "recommended_ram_gb": 16,
+        "disk_space_gb": 6,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Q5_0 (5.77GB). 5-bit quantization with excellent quality and detail preservation."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-q5-1": {
+      "repo_id": "city96/stable-diffusion-3.5-large-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-q5-1",
+      "parameters": {
+        "num_inference_steps": 28,
+        "guidance_scale": 4.5,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 6,
+        "recommended_vram_gb": 8,
+        "min_ram_gb": 12,
+        "recommended_ram_gb": 18,
+        "disk_space_gb": 7,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Q5_1 (6.27GB). High precision 5-bit quantization with outstanding quality."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-q8-0": {
+      "repo_id": "city96/stable-diffusion-3.5-large-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-q8-0",
+      "parameters": {
+        "num_inference_steps": 28,
+        "guidance_scale": 4.5,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 8,
+        "recommended_vram_gb": 10,
+        "min_ram_gb": 16,
+        "recommended_ram_gb": 24,
+        "disk_space_gb": 9,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Q8_0 (8.78GB). 8-bit quantization with near-original quality. Excellent for high-end systems."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-f16": {
+      "repo_id": "city96/stable-diffusion-3.5-large-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-f16",
+      "parameters": {
+        "num_inference_steps": 28,
+        "guidance_scale": 4.5,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 12,
+        "recommended_vram_gb": 16,
+        "min_ram_gb": 20,
+        "recommended_ram_gb": 32,
+        "disk_space_gb": 17,
+        "supported_devices": ["CUDA", "MPS"],
+        "performance_notes": "SD 3.5 Large F16 (16.3GB). Full precision with maximum quality. Requires high-end hardware."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
     "stable-diffusion-3.5-large-turbo": {
       "repo_id": "city96/stable-diffusion-3.5-large-turbo-gguf",
       "model_type": "sd3",
@@ -665,6 +1076,150 @@
         "disk_space_gb": 20,
         "supported_devices": ["CUDA", "MPS", "CPU"],
         "performance_notes": "Stable Diffusion 3.5 Large Turbo GGUF. Ultra-fast 4-step generation with high quality output."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-turbo-q4-0": {
+      "repo_id": "city96/stable-diffusion-3.5-large-turbo-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-turbo-q4-0",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 4,
+        "recommended_vram_gb": 6,
+        "min_ram_gb": 8,
+        "recommended_ram_gb": 12,
+        "disk_space_gb": 5,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Turbo Q4_0 (4.77GB). 4-bit quantization with ultra-fast 4-step generation. Great balance of speed and quality."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-turbo-q4-1": {
+      "repo_id": "city96/stable-diffusion-3.5-large-turbo-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-turbo-q4-1",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 4,
+        "recommended_vram_gb": 6,
+        "min_ram_gb": 8,
+        "recommended_ram_gb": 14,
+        "disk_space_gb": 6,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Turbo Q4_1 (5.27GB). Higher precision 4-bit quantization with ultra-fast generation."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-turbo-q5-0": {
+      "repo_id": "city96/stable-diffusion-3.5-large-turbo-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-turbo-q5-0",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 5,
+        "recommended_vram_gb": 8,
+        "min_ram_gb": 10,
+        "recommended_ram_gb": 16,
+        "disk_space_gb": 6,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Turbo Q5_0 (5.77GB). 5-bit quantization offering excellent quality with ultra-fast generation."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-turbo-q5-1": {
+      "repo_id": "city96/stable-diffusion-3.5-large-turbo-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-turbo-q5-1",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 6,
+        "recommended_vram_gb": 8,
+        "min_ram_gb": 12,
+        "recommended_ram_gb": 18,
+        "disk_space_gb": 7,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Turbo Q5_1 (6.27GB). High precision 5-bit quantization with superior quality and ultra-fast generation."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-turbo-q8-0": {
+      "repo_id": "city96/stable-diffusion-3.5-large-turbo-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-turbo-q8-0",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 8,
+        "recommended_vram_gb": 10,
+        "min_ram_gb": 16,
+        "recommended_ram_gb": 24,
+        "disk_space_gb": 9,
+        "supported_devices": ["CUDA", "MPS", "CPU"],
+        "performance_notes": "SD 3.5 Large Turbo Q8_0 (8.78GB). 8-bit quantization with near-original quality and ultra-fast 4-step generation."
+      },
+      "license_info": {
+        "type": "Stability AI Community License",
+        "requires_agreement": true,
+        "commercial_use": false
+      }
+    },
+    "stable-diffusion-3.5-large-turbo-f16": {
+      "repo_id": "city96/stable-diffusion-3.5-large-turbo-gguf",
+      "model_type": "sd3",
+      "variant": "gguf-large-turbo-f16",
+      "parameters": {
+        "num_inference_steps": 4,
+        "guidance_scale": 0.0,
+        "max_sequence_length": 77
+      },
+      "hardware_requirements": {
+        "min_vram_gb": 12,
+        "recommended_vram_gb": 16,
+        "min_ram_gb": 20,
+        "recommended_ram_gb": 32,
+        "disk_space_gb": 17,
+        "supported_devices": ["CUDA", "MPS"],
+        "performance_notes": "SD 3.5 Large Turbo F16 (16.3GB). Full precision with maximum quality and ultra-fast 4-step generation. Requires high-end hardware."
       },
       "license_info": {
         "type": "Stability AI Community License",
